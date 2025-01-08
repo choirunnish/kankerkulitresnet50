@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deteksi Penyakit Kanker Kulit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        /* CSS Global */
+        .title {
+            font-size: 40px; /* Ukuran font untuk "Deteksi Penyakit Kanker Kulit" */
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 35px; /* Ukuran font untuk "Choirunnisa Hasna" */
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: #ffc0cb; /* Warna pink muda untuk latar belakang */
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .hero {
+            background-color: #ffe4e1; /* Warna pink terang untuk bagian hero */
+        }
+
+        /* Mengubah warna latar belakang tombol "KIRIM" */
+        #classify_button {
+            background-color: #333333; /* Warna latar belakang gelap */
+            color: #ffffff; /* Teks tombol berwarna putih */
+            font-size: 25px; /* Ukuran font untuk teks tombol */
+            padding: 15px 30px; /* Padding untuk memperbesar tombol */
+            border: none; /* Menghapus border default */
+            border-radius: 5px; /* Menambahkan sudut melengkung pada tombol */
+            cursor: pointer; /* Menambahkan kursor pointer saat hover */
+            text-align: center; /* Memusatkan teks secara horizontal */
+            line-height: 1.0; /* Menjaga ketinggian baris agar teks tetap terpusat secara vertikal */
+            height: 60px; /* Menentukan tinggi tombol agar teks lebih terpusat */
+            transition: background-color 0.3s ease; /* Efek transisi saat hover */
+            font-weight: bold;
+        }
+
+        /* Efek hover pada tombol "KIRIM" */
+        #classify_button:hover {
+            background-color: #555555; /* Mengubah warna saat tombol di-hover */
+        }
+
+        /* Membesarkan tombol "Unggah gambar" */
+        .file-cta {
+            border: 3px solid #000; /* Border hitam dengan ketebalan 3px */
+            border-radius: 5px; /* Membuat sudut melengkung */
+            padding: 9px 10px; /* Menambahkan padding lebih besar untuk memperbesar tombol */
+            font-size: 20px; /* Menambahkan ukuran font yang lebih besar */
+            height: 50px; /* Menentukan tinggi tombol agar lebih besar */
+            font-weight: bold;
+        }
+
+        /* Menata teks "Tidak ada berkas yang dipilih" agar berada di tengah */
+        .file-name {
+            border: 3px solid #000; /* Border hitam untuk teks */
+            border-radius: 5px; /* Membuat sudut melengkung */
+            padding: 9px 10px; /* Menyesuaikan padding agar sama dengan file-cta */
+            font-size: 20px; /* Ukuran font yang sesuai */
+            height: 50px; /* Menyesuaikan tinggi agar sama dengan file-cta */
+            display: flex; /* Menggunakan Flexbox untuk memudahkan penataan */
+            justify-content: center; /* Memusatkan teks secara horizontal */
+            align-items: center; /* Memusatkan teks secara vertikal */
+            text-align: center; /* Menjaga teks tetap terpusat secara horizontal */
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero is-fullheight">
+        <!-- Bagian Atas -->
+        <section class="section">
+            <div class="container">
+                <center>
+                    <h1 class="title" style="font-size: 40px; font-weight: bold;">
+                        Deteksi Penyakit Kanker Kulit
+                    </h1>
+                    <p class="subtitle" style="font-size: 35px;">
+                        <strong>Choirunnisa Hasna</strong>
+                    </p>
+                </center>
+            </div>
+        </section>
+
+        <!-- Bagian Form -->
+        <section class="section">
+            <div class="container has-text-centered" style="width: 100%">
+                <p class="subtitle" style="font-size: 30px; font-weight: bold;">
+                    Periksa Apakah Kulit Anda Menunjukkan Tanda-Tanda Kanker Kulit
+                </p>
+                <div>
+                    <form action="/classify" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;">
+                        <div class="file has-name is-centered">
+                            <label class="file-label">
+                                <!-- Input file -->
+                                <input class="file-input" type="file" id="image" name="image">
+                                <!-- Tombol unggah gambar -->
+                                <span class="file-cta">
+                                    <span class="file-label">
+                                        Unggah gambar
+                                    </span>
+                                </span>
+                                <!-- Teks "Tidak ada berkas yang dipilih" -->
+                                <span class="file-name" id="file-name">
+                                    Tidak ada berkas yang dipilih
+                                </span>
+                            </label>
+                        </div>
+                        <br>
+                        <input type="submit" value="KIRIM" class="button is-black" name="image" id="classify_button">
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigasi -->
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <a class="navbar-item" href=""></a>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <a class="navbar-item" href=""></a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

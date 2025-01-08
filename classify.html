@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Penyakit Kanker Kulit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #ffc0cb; /* Pink muda */
+        font-family: 'Work Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: black;
+      }
+
+      img {
+        max-width: 300px;
+        max-height: 300px;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      .prediction {
+        color: black;
+        font-size: 1.8rem;
+        margin-top: 10px;
+      }
+
+      .accuracy {
+        font-size: 1.8rem;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+
+      #back_button {
+        background-color: #333333;
+        color: #ffffff;
+        font-size: 25px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        height: 60px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+        margin-top: 40px;
+      }
+
+      #back_button:hover {
+        background-color: #555555;
+      }
+    </style>
+</head>
+<body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Deteksi Penyakit Kanker Kulit</h1>
+        <p class="subtitle"><strong>Choirunnisa Hasna</strong></p>
+
+        <!-- Displaying the image -->
+        <img src="{{ url_for('send_file', filename=image_file_name) }}" alt="Image">
+        
+        <!-- Image file name -->
+        <p>{{ image_file_name }}</p>
+
+        <!-- Predicted Label -->
+        <p class="prediction">Anda diprediksi mengidap penyakit kanker kulit jenis: {{ label }}</p>
+
+        <!-- Keterangan kategori -->
+        <p class="prediction" style="color: black; font-weight: bold;">
+          Kategori: <strong>{{ category }}</strong>
+        </p>
+        
+
+        <!-- Confidence -->
+        <h2 class="accuracy">
+          Hasil Prediksi: <span>{{ prob }}%</span>
+        </h2>
+
+        <!-- Link back to home -->
+        <a href="/" id="back_button">Kembali ke Beranda</a>
+      </div>
+    </section>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
